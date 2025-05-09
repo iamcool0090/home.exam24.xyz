@@ -1,7 +1,4 @@
-<!-- This is a simple HTML template for a CI/CD pipeline demo page using Tailwind CSS and Alpine.js -->
-
-{% block title %}404 - Page Not Found{% endblock %}
-
+<!-- This is a Rickroll-themed HTML template for a CI/CD pipeline demo page using Tailwind CSS and Alpine.js -->
 {% block head %}
 <!-- Add Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -10,46 +7,49 @@
 {% block content %}
 <div class="flex flex-col items-center justify-center min-h-[70vh] px-4 py-12">
     <div class="text-center max-w-md">
-        <!-- Fun Emoji Face -->
+        <!-- Rick Astley Emoji -->
         <div class="text-9xl mb-4 animate-bounce">
-            😵
+            🎤
         </div>
+
+        <!-- Rick Astley Image -->
+        <img src="/static/Rick_Astley.webp" alt="Rick Astley" class="w-48 h-auto mx-auto mb-6 rounded-lg shadow-lg">
         
-        <!-- Error Code with Fun Typography -->
+        <!-- Rickroll Typography -->
         <h1 class="text-8xl font-bold text-indigo-600 mb-6 tracking-tight">
-            4<span class="animate-pulse inline-block">0</span>4
+            Never<span class="animate-pulse inline-block">G</span>onna
         </h1>
         
-        <!-- Humorous Error Message -->
+        <!-- Rickroll Message -->
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-            Oops! Page Not Found 🔍
+            Give You Up 🎶
         </h2>
         
         <!-- Fun Description -->
         <p class="text-gray-600 mb-8 text-xl">
-            We've looked everywhere, even behind the couch 🛋️, but we couldn't find the page you requested.
+            You've been Rickrolled! But hey, at least it's a classic. 🎵
         </p>
         
         <!-- Additional Emojis in a Fun Container -->
         <div class="flex justify-center gap-4 mb-8 text-3xl">
-            <span class="animate-spin">🕵️</span>
-            <span class="animate-ping">❓</span>
-            <span class="animate-bounce">🤷‍♂️</span>
+            <span class="animate-spin">🎶</span>
+            <span class="animate-ping">🎤</span>
+            <span class="animate-bounce">🕺</span>
         </div>
 
-        <!-- Funny Quote -->
+        <!-- Rickroll Quote -->
         <p class="italic text-gray-500 mb-8">
-            "In the vast digital universe, this page chose to play hide and seek... and it's winning! 🚀"
+            "Never gonna give you up, never gonna let you down, never gonna run around and desert you!" 🎵
         </p>
         
-        <!-- Return Home Button -->
-        <a href="/" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow transition duration-300 transform hover:scale-105">
-            <span class="mr-2">🏠</span> Take Me Home
+        <!-- Watch Video Button -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow transition duration-300 transform hover:scale-105">
+            <span class="mr-2">🎥</span> Watch the Video
         </a>
         
         <!-- Random Suggestion -->
         <div class="mt-8 text-sm text-gray-500">
-            <p>Maybe try one of these instead:</p>
+            <p>Or explore these instead:</p>
             <div class="mt-3 flex flex-wrap justify-center gap-2">
                 <a href="/" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">🏠 Home</a>
                 <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">📦 Products</a>
@@ -61,7 +61,7 @@
         <!-- Fun Fact -->
         <div class="mt-10 p-4 bg-yellow-50 rounded-lg text-yellow-800 text-sm">
             <p class="font-bold">🤓 Fun Fact:</p>
-            <p>The "404 error" comes from room 404 at CERN where the World Wide Web was developed. When the room wasn't found, they'd say "Room 404", and the name stuck!</p>
+            <p>Rick Astley's "Never Gonna Give You Up" was released in 1987 and became an internet sensation decades later as the ultimate prank!</p>
         </div>
     </div>
 </div>
@@ -70,7 +70,7 @@
 {% block scripts %}
 <script>
     // Just for fun - change the emoji every few seconds
-    const emojis = ["😵", "🤔", "😱", "🙈", "😶", "🥴", "🧐"];
+    const emojis = ["🎤", "🎶", "🕺", "💃", "🎧", "🎵", "🎸"];
     const emojiElement = document.querySelector('.text-9xl');
     
     let currentIndex = 0;
