@@ -6,7 +6,7 @@ app = FastAPI()
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 
-app.mount("/", StaticFiles(directory=static_dir), name="static", html=True)
+app.mount("/", StaticFiles(directory=static_dir, html=True), name="static")
 
 if __name__ == "__main__":
     import uvicorn 
