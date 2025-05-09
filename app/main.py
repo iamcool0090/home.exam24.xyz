@@ -5,7 +5,6 @@ import os
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
-
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 
 app.mount("/static", StaticFiles(directory=static_dir, html=True), name="static")
