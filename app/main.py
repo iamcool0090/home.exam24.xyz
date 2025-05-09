@@ -18,10 +18,13 @@ async def index(request : Request):
 async def about(request : Request):
     return templates.TemplateResponse("about.html", {"request": request, "name": "John Doe"})
 
-
+@app.exception_handler(404)
+async def not_found(request: Request, exc):
+    return templates.TemplateResponse("404.html", {"request": request, "name": "John Doe"}, status_code=404)
 
 
 if __name__ == "__main__":
     import uvicorn 
+    from fastapi.responses import HTMLResponse
     uvicorn.run(app, host="0.0.0.0", port=8001)
 
