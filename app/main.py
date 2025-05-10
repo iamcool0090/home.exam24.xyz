@@ -7,7 +7,7 @@ import os
 from app.models.form import ContactForm
 
 
-cache = TTLCache(maxsize=100, ttl=300)
+cache = TTLCache(maxsize=100, ttl=5)
 app = FastAPI()
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
 static_dir = os.path.join(os.path.dirname(__file__), "static")
@@ -29,13 +29,16 @@ async def index(request : Request):
 async def about(request : Request):
     return templates.TemplateResponse("pages/about.html", {"request": request, "name": "John Doe"})
 
+
+@app.get('/institutions')
+async def institutions(request : Request):
+    return templates.TemplateResponse("pages/institutions.html", {"request": request, "name": "John Doe"})
+
 @app.post('/contact')
 async def contact(email: str = Form(...)):
     form = ContactForm(email=email)
     print(form.email)
     return 200
-
-
 
 @app.exception_handler(404)
 async def not_found(request: Request, exc):

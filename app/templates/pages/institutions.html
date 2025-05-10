@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block title %}UniCrew - Partner Institutions{% endblock %}
+
+{% block head %}
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="bg-gradient-to-b from-primary-50 to-white pt-16 pb-8">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto">
+            <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl mb-4">Partner Institutions in Bengaluru</h1>
+            <p class="text-xl text-gray-600">Connect with verified peers from top colleges in Bengaluru.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mx-auto px-4 py-12">
+    <!-- Featured Institutions -->
+    <div class="mb-16">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Featured Institutions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- RVCE -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div class="h-36 bg-blue-700 relative flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold">RVCE</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Bengaluru, India
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium text-gray-900">8,542</span> members
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Rashtreeya Vidyalaya College of Engineering (RVCE) is one of the top engineering colleges in Bengaluru, known for its academic excellence and vibrant campus life.</p>
+                    <a href="/institutions/rvce" class="inline-flex items-center text-primary-600 hover:text-primary-800">
+                        See members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BMSCE -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div class="h-36 bg-red-700 relative flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold">BMSCE</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Bengaluru, India
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium text-gray-900">7,321</span> members
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">BMS College of Engineering (BMSCE) is one of the oldest and most prestigious engineering colleges in Bengaluru, offering a wide range of programs.</p>
+                    <a href="/institutions/bmsce" class="inline-flex items-center text-primary-600 hover:text-primary-800">
+                        See members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- MSRIT -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div class="h-36 bg-green-700 relative flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold">MSRIT</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Bengaluru, India
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium text-gray-900">6,874</span> members
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">M.S. Ramaiah Institute of Technology (MSRIT) is a renowned engineering college in Bengaluru, known for its strong academic programs and industry connections.</p>
+                    <a href="/institutions/msrit" class="inline-flex items-center text-primary-600 hover:text-primary-800">
+                        See members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RNSIT -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div class="h-36 bg-purple-700 relative flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold">RNSIT</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Bengaluru, India
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium text-gray-900">5,432</span> members
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">RNS Institute of Technology (RNSIT) is a leading engineering college in Bengaluru, offering quality education and excellent placement opportunities.</p>
+                    <a href="/institutions/rnsit" class="inline-flex items-center text-primary-600 hover:text-primary-800">
+                        See members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- DSCE -->
+            <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-md transition-transform hover:shadow-lg hover:-translate-y-1">
+                <div class="h-36 bg-yellow-700 relative flex items-center justify-center">
+                    <span class="text-white text-3xl font-bold">DSCE</span>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 text-primary-800">
+                                Bengaluru, India
+                            </span>
+                        </div>
+                        <div class="text-sm text-gray-500">
+                            <span class="font-medium text-gray-900">4,987</span> members
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-4">Dayananda Sagar College of Engineering (DSCE) is a premier engineering college in Bengaluru, known for its state-of-the-art infrastructure and academic excellence.</p>
+                    <a href="/institutions/dsce" class="inline-flex items-center text-primary-600 hover:text-primary-800">
+                        See members
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
