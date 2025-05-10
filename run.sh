@@ -1,1 +1,1 @@
-gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8001 app.main:app
+gunicorn -w 8 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8001 app.main:app
