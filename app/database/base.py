@@ -30,4 +30,10 @@ class BaseDatabase(ABC):
         :return: Result of the query execution
         """
 
+    def set_schema(self):
+        """
+        Set the database schema.
+        """
+        pass
+
     
