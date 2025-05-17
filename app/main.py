@@ -16,7 +16,7 @@ app.mount("/static", StaticFiles(directory=static_dir, html=True), name="static"
 
 
 @app.get('/')
-async def index(request : Request):
+async def index(request: Request):
     cache_key = str(request.url)
     if cache_key in cache:
         return cache[cache_key]
