@@ -49,7 +49,8 @@ async def contact(email: str = Form(...)):
 @app.get('/leads')
 async def leads(request: Request):
     leads = db.execute_query("SELECT * FROM leads")
-    return templates.TemplateResponse("pages/leads.html", {"request": request, "leads": leads, "name": "John Doe"})
+    leads_list = [Lead.factory(row) for row in leads]
+    return templates.TemplateResponse("pages/leads.html", {"request": request, "leads": leads_list, "name": "John Doe"})
 
 @app.post('/leads')
 async def create_lead(email: str = Form(...)):
@@ -61,7 +62,6 @@ async def create_lead(email: str = Form(...)):
 
         leads = db.execute_query("SELECT * FROM leads")
         leads_list = [Lead.factory(row) for row in leads]
-        
         return templates.TemplateResponse("pages/leads.html", {"request": {}, "leads": leads_list}, status_code=200)
     
 
