@@ -19,7 +19,7 @@
                 <tbody>
                     {% for lead in leads %}
                     <tr class="border-t border-gray-100 hover:bg-indigo-50 transition">
-                        <td class="py-3 px-6 text-gray-500">{{ loop.index }}</td>
+                        <td class="py-3 px-6 text-gray-500">{{ lead.id }}</td>
                         <td class="py-3 px-6 text-indigo-700">{{ lead.email }}</td>
                         <td class="py-3 px-6 text-gray-600">{{ lead.created_at if lead.created_at else '' }}</td>
                     </tr>

@@ -66,6 +66,23 @@ async def create_lead(email: str = Form(...)):
     
     except Exception as e:
         return {"error": str(e)}
+    
+@app.delete('/leads/{lead_id}')
+async def delete_lead(lead_id: int):
+    try:
+        cursor = db.get_cursor()
+        cursor.execute("DELETE FROM leads WHERE id = ?", (lead_id,))
+        cursor.connection.commit()
+        cursor.close()
+
+        leads = db.execute_query("SELECT * FROM leads")
+        leads_list = [Lead.factory(row) for row in leads]
+        return templates.TemplateResponse("pages/leads.html", {"request": {}, "leads": leads_list}, status_code=200)
+    
+    except Exception as e:
+        return {"error": str(e)}
+    
+
 
 @app.exception_handler(404)
 async def not_found(request: Request, exc):
