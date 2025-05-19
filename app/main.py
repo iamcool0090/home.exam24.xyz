@@ -10,7 +10,7 @@ from app.database.db_sqlite import SQLiteDatabase
 cache = TTLCache(maxsize=100, ttl=5)
 app = FastAPI()
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
-db = SQLiteDatabase()
+db = SQLiteDatabase('data.sql')
 
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 
@@ -38,9 +38,17 @@ async def institutions(request : Request):
 
 @app.post('/contact')
 async def contact(email: str = Form(...)):
-    form = ContactForm(email=email)
-    print(form.email)
+    form = ContactForm(email=email) 
+    db.execute_query("INSERT INTO leads (email, created_at) VALUES (?, datetime('now'))", (form.email,))
+    db.connection.commit()
     return 200
+
+@app.get('/leads')
+async def leads(request: Request):
+    leads = db.execute_query("SELECT * FROM leads")
+    print(leads)
+    return templates.TemplateResponse("pages/leads.html", {"request": request, "leads": leads, "name": "John Doe"})
+
 
 @app.exception_handler(404)
 async def not_found(request: Request, exc):
