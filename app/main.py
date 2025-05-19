@@ -5,18 +5,20 @@ from cachetools import TTLCache
 import os 
 
 from app.models.form import ContactForm
-
+from app.database.db_sqlite import SQLiteDatabase
 
 cache = TTLCache(maxsize=100, ttl=5)
 app = FastAPI()
 templates = Jinja2Templates(directory=os.path.join(os.path.dirname(__file__), "templates"))
+db = SQLiteDatabase()
+
 static_dir = os.path.join(os.path.dirname(__file__), "static")
 
 app.mount("/static", StaticFiles(directory=static_dir, html=True), name="static")
 
 
 @app.get('/')
-async def index(request : Request):
+async def index(request: Request):
     cache_key = str(request.url)
     if cache_key in cache:
         return cache[cache_key]

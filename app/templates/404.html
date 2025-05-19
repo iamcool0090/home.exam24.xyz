@@ -1,4 +1,5 @@
-<!-- This is a Rickroll-themed HTML template for a CI/CD pipeline demo page using Tailwind CSS and Alpine.js -->
+{% extends "layout.html" %}
+
 {% block head %}
 <!-- Add Tailwind CSS via CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
@@ -7,61 +8,66 @@
 {% block content %}
 <div class="flex flex-col items-center justify-center min-h-[70vh] px-4 py-12">
     <div class="text-center max-w-md">
-        <!-- Rick Astley Emoji -->
-        <div class="text-9xl mb-4 animate-bounce">
-            🎤
+        <!-- Error Icon -->
+        <div class="text-9xl mb-4 text-indigo-600">
+            <i class="fas fa-map-signs"></i>
         </div>
-
-        <!-- Rick Astley Image -->
-        <img src="/static/Rick_Astley.webp" alt="Rick Astley" class="w-48 h-auto mx-auto mb-6 rounded-lg shadow-lg">
         
-        <!-- Rickroll Typography -->
+        <!-- 404 Typography -->
         <h1 class="text-8xl font-bold text-indigo-600 mb-6 tracking-tight">
-            Never<span class="animate-pulse inline-block">G</span>onna
+            4<span class="inline-block">0</span>4
         </h1>
         
-        <!-- Rickroll Message -->
+        <!-- Error Message -->
         <h2 class="text-2xl font-semibold text-gray-800 mb-4">
-            Give You Up 🎶
+            Page Not Found
         </h2>
         
-        <!-- Fun Description -->
+        <!-- Description -->
         <p class="text-gray-600 mb-8 text-xl">
-            You've been Rickrolled! But hey, at least it's a classic. 🎵
+            Sorry, the page you are looking for doesn't exist or has been moved.
         </p>
         
-        <!-- Additional Emojis in a Fun Container -->
-        <div class="flex justify-center gap-4 mb-8 text-3xl">
-            <span class="animate-spin">🎶</span>
-            <span class="animate-ping">🎤</span>
-            <span class="animate-bounce">🕺</span>
+        <!-- Icon Container -->
+        <div class="flex justify-center gap-4 mb-8 text-3xl text-indigo-400">
+            <i class="fas fa-search"></i>
+            <i class="fas fa-compass"></i>
+            <i class="fas fa-map"></i>
         </div>
 
-        <!-- Rickroll Quote -->
-        <p class="italic text-gray-500 mb-8">
-            "Never gonna give you up, never gonna let you down, never gonna run around and desert you!" 🎵
+        <!-- Helpful Message -->
+        <p class="text-gray-500 mb-8">
+            We've searched everywhere but couldn't find the page you requested. Let's get you back on track.
         </p>
         
-        <!-- Watch Video Button -->
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow transition duration-300 transform hover:scale-105">
-            <span class="mr-2">🎥</span> Watch the Video
+        <!-- Return to Home Button -->
+        <a href="/" class="inline-flex items-center px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-lg shadow transition duration-300">
+            <i class="fas fa-home mr-2"></i> Return to Homepage
         </a>
         
-        <!-- Random Suggestion -->
+        <!-- Navigation Suggestions -->
         <div class="mt-8 text-sm text-gray-500">
-            <p>Or explore these instead:</p>
+            <p>Or explore these popular pages:</p>
             <div class="mt-3 flex flex-wrap justify-center gap-2">
-                <a href="/" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">🏠 Home</a>
-                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">📦 Products</a>
-                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">🧑‍💻 About</a>
-                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">📞 Contact</a>
+                <a href="/" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-box"></i> Products
+                </a>
+                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-info-circle"></i> About
+                </a>
+                <a href="#" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-phone"></i> Contact
+                </a>
             </div>
         </div>
         
-        <!-- Fun Fact -->
-        <div class="mt-10 p-4 bg-yellow-50 rounded-lg text-yellow-800 text-sm">
-            <p class="font-bold">🤓 Fun Fact:</p>
-            <p>Rick Astley's "Never Gonna Give You Up" was released in 1987 and became an internet sensation decades later as the ultimate prank!</p>
+        <!-- Help Box -->
+        <div class="mt-10 p-4 bg-blue-50 rounded-lg text-blue-800 text-sm">
+            <p class="font-bold"><i class="fas fa-info-circle"></i> Need Help?</p>
+            <p>If you believe this page should exist, please contact our support team for assistance.</p>
         </div>
     </div>
 </div>
@@ -69,14 +75,8 @@
 
 {% block scripts %}
 <script>
-    // Just for fun - change the emoji every few seconds
-    const emojis = ["🎤", "🎶", "🕺", "💃", "🎧", "🎵", "🎸"];
-    const emojiElement = document.querySelector('.text-9xl');
-    
-    let currentIndex = 0;
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % emojis.length;
-        emojiElement.textContent = emojis[currentIndex];
-    }, 3000);
+    // Add subtle animation to the 404 number
+    const errorNumber = document.querySelector('.text-8xl');
+    errorNumber.classList.add('hover:animate-pulse');
 </script>
 {% endblock %}
