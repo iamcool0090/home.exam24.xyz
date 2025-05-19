@@ -67,7 +67,7 @@ async def create_lead(email: str = Form(...)):
     except Exception as e:
         return {"error": str(e)}
     
-@app.delete('/leads/{lead_id}')
+@app.post('/leads/{lead_id}')
 async def delete_lead(lead_id: int):
     try:
         cursor = db.get_cursor()

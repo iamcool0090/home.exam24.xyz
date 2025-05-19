@@ -14,6 +14,7 @@
                         <th class="py-3 px-6 text-left font-semibold">#</th>
                         <th class="py-3 px-6 text-left font-semibold">Email</th>
                         <th class="py-3 px-6 text-left font-semibold">Created At</th>
+                        <th class="py-3 px-6 text-left font-semibold">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,6 +23,13 @@
                         <td class="py-3 px-6 text-gray-500">{{ lead.id }}</td>
                         <td class="py-3 px-6 text-indigo-700">{{ lead.email }}</td>
                         <td class="py-3 px-6 text-gray-600">{{ lead.created_at if lead.created_at else '' }}</td>
+                        <td class="py-3 px-6 text-red-500">
+                            <form action="/leads/{{ lead.id }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this lead?');">
+                                <button type="submit" class="hover:text-red-700">
+                                    Delete
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
