@@ -12,7 +12,6 @@
                 <thead>
                     <tr class="bg-indigo-100 text-indigo-700">
                         <th class="py-3 px-6 text-left font-semibold">#</th>
-                        <th class="py-3 px-6 text-left font-semibold">Name</th>
                         <th class="py-3 px-6 text-left font-semibold">Email</th>
                         <th class="py-3 px-6 text-left font-semibold">Created At</th>
                     </tr>
@@ -21,9 +20,8 @@
                     {% for lead in leads %}
                     <tr class="border-t border-gray-100 hover:bg-indigo-50 transition">
                         <td class="py-3 px-6 text-gray-500">{{ loop.index }}</td>
-                        <td class="py-3 px-6 font-medium text-gray-900">{{ lead.name }}</td>
                         <td class="py-3 px-6 text-indigo-700">{{ lead.email }}</td>
-                        <td class="py-3 px-6 text-gray-600">{{ lead.created_at.strftime('%Y-%m-%d %H:%M') if lead.created_at else '' }}</td>
+                        <td class="py-3 px-6 text-gray-600">{{ lead.created_at if lead.created_at else '' }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

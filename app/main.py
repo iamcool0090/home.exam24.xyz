@@ -6,6 +6,9 @@ import os
 
 from app.models.form import ContactForm
 from app.database.db_sqlite import SQLiteDatabase
+from app.models.lead import Lead
+
+from typing import Any
 
 cache = TTLCache(maxsize=100, ttl=5)
 app = FastAPI()
@@ -46,9 +49,25 @@ async def contact(email: str = Form(...)):
 @app.get('/leads')
 async def leads(request: Request):
     leads = db.execute_query("SELECT * FROM leads")
-    print(leads)
     return templates.TemplateResponse("pages/leads.html", {"request": request, "leads": leads, "name": "John Doe"})
 
+@app.post('/leads')
+async def create_lead(email: str = Form(...)):
+    try:
+        cursor = db.get_cursor()
+        cursor.execute("INSERT INTO leads (email, created_at) VALUES (?, datetime('now'))", (email,))
+        cursor.connection.commit()
+        cursor.close()
+
+        leads = db.execute_query("SELECT * FROM leads")
+        leads_list = [Lead.factory(row) for row in leads]
+        
+        return templates.TemplateResponse("pages/leads.html", {"request": {}, "leads": leads_list}, status_code=200)
+    
+
+
+    except Exception as e:
+        return {"error": str(e)}
 
 @app.exception_handler(404)
 async def not_found(request: Request, exc):

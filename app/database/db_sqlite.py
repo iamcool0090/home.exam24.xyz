@@ -44,6 +44,16 @@ class SQLiteDatabase(BaseDatabase):
         cursor.execute(query)
         self.connection.commit()
         return cursor.fetchall()
+    
+    def get_cursor(self):
+        """
+        Get a cursor for the SQLite database.
+
+        :return: SQLite cursor
+        """
+        if not self.connection:
+            raise ConnectionError("Database is not connected.")
+        return self.connection.cursor()
 
     def set_schema(self):
         """
