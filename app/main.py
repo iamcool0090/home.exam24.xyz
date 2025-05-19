@@ -64,8 +64,6 @@ async def create_lead(email: str = Form(...)):
         leads_list = [Lead.factory(row) for row in leads]
         return templates.TemplateResponse("pages/leads.html", {"request": {}, "leads": leads_list}, status_code=200)
     
-
-
     except Exception as e:
         return {"error": str(e)}
 

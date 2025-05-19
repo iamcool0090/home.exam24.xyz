@@ -22,7 +22,6 @@ def deploy_repo(clone_url):
 @app.post("/webhook")
 async def github_webhook(request: Request, background_tasks: BackgroundTasks):
     payload = await request.json()
-    print("Received payload:", payload)
     # Get the clone_url from the payload
     clone_url = payload.get("repository", {}).get("clone_url")
     if clone_url:
